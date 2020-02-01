@@ -1,4 +1,4 @@
-DROP TABLE IF EXISTS signups;
+DROP TABLE IF EXISTS scores;
 DROP TABLE IF EXISTS athletes;
 DROP TABLE IF EXISTS events;
 
@@ -15,7 +15,7 @@ CREATE TABLE events (
   competition VARCHAR(255)
 );
 
-CREATE TABLE signups (
+CREATE TABLE scores (
   id SERIAL PRIMARY KEY,
   athelete_id INT REFERENCES athletes(id) ON DELETE CASCADE,
   event_id INT REFERENCES events(id) ON DELETE CASCADE,
