@@ -1,5 +1,6 @@
 class Athlete
 
+  attr_reader :id
   attr_accessor :name, :country, :hometown, :sponsor
 
   def initialize( profile )
