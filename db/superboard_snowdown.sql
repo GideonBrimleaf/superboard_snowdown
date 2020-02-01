@@ -2,7 +2,7 @@ DROP TABLE IF EXISTS signups;
 DROP TABLE IF EXISTS athletes;
 DROP TABLE IF EXISTS events;
 
-CREATE TABLE atheletes (
+CREATE TABLE athletes (
   id SERIAL PRIMARY KEY,
   name VARCHAR(255),
   country VARCHAR(100),
