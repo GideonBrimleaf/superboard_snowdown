@@ -1,3 +1,5 @@
+require_relative('../../db/sql_runner')
+
 class Athlete
 
   attr_reader :id
@@ -12,6 +14,14 @@ class Athlete
   end
 
   def save
+    sql = 'INSERT INTO athletes
+           (name, country, hometown, sponsor)
+           VALUES ($1, $2, $3, $4)
+           RETURNING id'
+    values = [@name, @country, @hometown, @sponsor]
+    athlete = SqlRunner.run( sql, values )
+    athlete['id']
+    # @id = athlete['id']
   end
 
 end
