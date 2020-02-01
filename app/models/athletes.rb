@@ -19,9 +19,8 @@ class Athlete
            VALUES ($1, $2, $3, $4)
            RETURNING id'
     values = [@name, @country, @hometown, @sponsor]
-    athlete = SqlRunner.run( sql, values )
-    athlete['id']
-    # @id = athlete['id']
+    athlete = SqlRunner.run( sql, values ).first
+    @id = athlete['id']
   end
 
 end
