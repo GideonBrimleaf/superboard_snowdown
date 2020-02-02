@@ -20,7 +20,7 @@ class Athlete
            RETURNING id'
     values = [@name, @country, @hometown, @sponsor]
     athlete = SqlRunner.run( sql, values ).first
-    @id = athlete['id']
+    @id = athlete['id'].to_i
   end
 
 end

@@ -4,7 +4,11 @@ class SqlRunner
 
   def self.run( sql, values = [] )
     begin
-      db = PG.connect({ dbname: 'superboard_snowdown', host: 'localhost' })
+      if ENV['ENVIRONMENT'] == 'test'
+        db = PG.connect({ dbname: 'superboard_snowdown_dev', host: 'localhost' })
+      else
+        db = PG.connect({ dbname: 'superboard_snowdown', host: 'localhost' })
+      end
       db.prepare("query", sql)
       result = db.exec_prepared( "query", values )
     ensure

@@ -1,9 +1,13 @@
 
 # frozen_string_literal: true
 
+require_relative('spec_helper.rb')
+require_relative('../db/setup_test_db.rb')
 require_relative('../app/models/athletes.rb')
 
 RSpec.describe Athlete do
+
+  setup_test_database!
 
   let(:new_athlete) do
     new_athlete = Athlete.new({'name'=>'Gideon', 'country'=>'Scotland', 'hometown'=>'Edinburgh', 'sponsor'=>'Burton'})
