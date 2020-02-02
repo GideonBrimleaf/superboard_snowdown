@@ -1,4 +1,4 @@
-require_relative('../../db/sql_runner')
+require_relative '../../db/sql_runner' 
 
 class Athlete
 
@@ -21,6 +21,10 @@ class Athlete
     values = [@name, @country, @hometown, @sponsor]
     athlete = SqlRunner.run( sql, values ).first
     @id = athlete['id'].to_i
+  end
+
+  def update
+    true
   end
 
 end

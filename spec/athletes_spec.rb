@@ -1,9 +1,9 @@
 
 # frozen_string_literal: true
 
-require_relative('spec_helper.rb')
-require_relative('../db/setup_test_db.rb')
-require_relative('../app/models/athletes.rb')
+require_relative 'spec_helper'
+require_relative '../db/setup_test_db'
+require_relative '../app/models/athletes'
 
 RSpec.describe Athlete do
 
