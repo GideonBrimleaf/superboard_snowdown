@@ -1,4 +1,4 @@
-require_relative '../../db/sql_runner' 
+require_relative '../../db/sql_runner'
 
 class Athlete
 
@@ -23,8 +23,8 @@ class Athlete
     @id = athlete['id'].to_i
   end
 
-  def update
-    true
+  def update( profile )
+    sql = 'UPDATE ATHLETES SET RETURNING Y'
   end
 
 end

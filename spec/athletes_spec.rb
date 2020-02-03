@@ -30,4 +30,15 @@ RSpec.describe Athlete do
     end
   end
 
+  describe '#update' do
+
+    it "updates Gideon's profile and returns entry" do
+      new_athlete.update({'country'=>'Narth','hometown'=> 'Narth', 'sponsor'=>'Salomon'})
+      expect(new_athlete.name).to eql('Gideon')
+      expect(new_athlete.country).to eql('Narth')
+      expect(new_athlete.hometown).to eql('Narth')
+      expect(new_athlete.sponsor).to eql('Salomon')
+    end
+  end
+
 end
